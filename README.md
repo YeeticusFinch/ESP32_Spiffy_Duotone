@@ -14,6 +14,7 @@ Neopixel -> 18
 
 How to upload code to board:
 Download the Arduino IDE and run it
+You will want to change line 280, to choose the bluetooth device name
 Go to "Arduino > Preferences", paste this into the "Additional Boards Manager URLs": https://dl.espressif.com/dl/package_esp32_index.json
 Go to "Tools > Board > Board Manager", and install "esp32" (I have 1.0.4 installed, but use whatever works)
 If you need more help with installation, go here: https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/
