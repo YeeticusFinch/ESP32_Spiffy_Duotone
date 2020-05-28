@@ -53,8 +53,8 @@ const int NUMPIXELS = 15;
 
 //struct tm *timeinfo; //Some random line required for storing time, not sure why
 
-const int songCount = 68;
-String songs = "0) The Following Theme\n1) Stranger Things Title Screen\n2) Sonata in C 3rd Movement\n3) Doctor Who Theme\n4) Skyrim Title Screen\n5) Cello Concerto\n6) Secunda\n7) Evil Morty\n8) Ward\n9) Love the Way You Lie Skylit Drive Remix\n10) Spooky Scary Skeletons\n11) Seven Nation Army\n12) Goodbye Moonmen\n13) All Star but its so Beautiful\n14) Crab Rave\n15) Happy Birthday\n16) Natural\n17) Heathens\n18) Rick and Morty Intro\n19) Waterloo\n20) Take on Me\n21) Despacito\n22) Interstellar Firstep\n23) Overwatch Theme\n24) Control\n25) A Cruel Angel's Thesis Neon Genesis\n26) Soviet National Anthem\n27) Beastars OP\n28) Stairway to Heaven\n29) Memelovania\n30) Imagine Communism\n31) Sweeeeet Child O' Mine\n32) Kiss of Death\n33) The Game is On, Sherlock\n34) Bohemian Rhapsody\n35) Fade\n36) For Whom the Bell Tolls\n37) Cantina\n38) The Force Awakens - Rey's Theme\n39) Marble Machine - Wintergatan\n40) O Fortuna\n41) Crazy Train\n42) Thunderstruck\n43) Charol of the Bells\n44) Thomas the Dank Engine\n45) Højt fra træets grønne top\n46) Teeth\n47) Maple Leaf Rag\n48) A Cruel Angel's Meme\n49) The Other Side of Paradise\n50) InSaNiTy\n51) Ghost Fight\n52) I Am The Doctor\n53) Old Town Road\n54) Senorita\n55) Dance Monkey\n56) YMCA\n57) The Swan\n58) Sweet but Psycho\n59) Dear Society\n60) ﻿Uragirimono No Requiem (JoJo)\n61) Giorno's Theme (JoJo)\n62) A Butterflies Wings (JoJo Rabit)\n63) Every Girl's A Super Girl (JoJo)\n64) Clair De Lune\n65)Jazz In Paris\n66) Cohen's Masterpiece (Bioshock)\n67) Out Of The Black";
+const int songCount = 70;
+String songs = "0) The Following Theme\n1) Stranger Things Title Screen\n2) Sonata in C 3rd Movement\n3) Doctor Who Theme\n4) Skyrim Title Screen\n5) Cello Concerto\n6) Secunda\n7) Evil Morty\n8) Ward\n9) Love the Way You Lie Skylit Drive Remix\n10) Spooky Scary Skeletons\n11) Seven Nation Army\n12) Goodbye Moonmen\n13) All Star but its so Beautiful\n14) Crab Rave\n15) Happy Birthday\n16) Natural\n17) Heathens\n18) Rick and Morty Intro\n19) Waterloo\n20) Take on Me\n21) Despacito\n22) Interstellar Firstep\n23) Overwatch Theme\n24) Control\n25) A Cruel Angel's Thesis Neon Genesis\n26) Soviet National Anthem\n27) Beastars OP\n28) Stairway to Heaven\n29) Memelovania\n30) Imagine Communism\n31) Sweeeeet Child O' Mine\n32) Kiss of Death\n33) The Game is On, Sherlock\n34) Bohemian Rhapsody\n35) Fade\n36) For Whom the Bell Tolls\n37) Cantina\n38) The Force Awakens - Rey's Theme\n39) Marble Machine - Wintergatan\n40) O Fortuna\n41) Crazy Train\n42) Thunderstruck\n43) Charol of the Bells\n44) Thomas the Dank Engine\n45) Højt fra træets grønne top\n46) Teeth\n47) Maple Leaf Rag\n48) A Cruel Angel's Meme\n49) The Other Side of Paradise\n50) InSaNiTy\n51) Ghost Fight\n52) I Am The Doctor\n53) Old Town Road\n54) Senorita\n55) Dance Monkey\n56) YMCA\n57) The Swan\n58) Sweet but Psycho\n59) Dear Society\n60) ﻿Uragirimono No Requiem (JoJo)\n61) Giorno's Theme (JoJo)\n62) A Butterflies Wings (JoJo Rabit)\n63) Every Girl's A Super Girl (JoJo)\n64) Clair De Lune\n65)Jazz In Paris\n66) Cohen's Masterpiece (Bioshock)\n67) Out Of The Black\n68) Moonage DayDream\n 69) Space Oddity";
 String fileNames[] = {
   "/TheFollowingTheme.txt",
   "/StrangerThingsTitleScreen.txt",
@@ -124,8 +124,10 @@ String fileNames[] = {
   "/JazzInParis.txt",
   "/Cohen.txt",
   "/Outofblack.txt",
+  "/MoonageDaydream.txt",
+  "/SpaceOddity.txt",
 };
-String newFeatures = "What's new?\n- Added 'Out Of The Black'";
+String newFeatures = "What's new?\n- Added 'Out Of The Black'\n- Added 'Moonage Daydream'\n- Added 'Space Oddity'";
 int hourMod = 0;
 int minuteMod = 0;
 const int yeetSize = 16384;
@@ -153,7 +155,7 @@ int table4[] = {
 
 int table5[] = {
   //0, -3, 330, 440, 523, 659, 622, 494, 587, -2, 466, 554, 698, 415, 220, 262, 880, 831, 784, 740, 294, 165, 110, 98, 87, 82, 349, 175, 370, -6, 247, 392, 988, 1047, 1175, 1319, 1397, 8000, 750, 250, 1000, 2000, -8, 500, -4, -9, 1500, 6000, 375, 4000, -18, 125, 156, 147, 139, 131, 123, 116, 104, 73, 92, 55, 65, 77, 208, 52, 62, 311, 44, -48, -28, -34, -66, -19, -10, 
-    0, -3, 330, 440, 523, 659, 622, 494, 587, -2, 466, 554, 698, 415, 220, 262, 880, 831, 784, 740, 294, 165, 110, 98, 87, 82, 349, 175, 370, -6, 247, 392, 988, 1047, 1175, 1319, 1397, 8000, 750, 250, 1000, 2000, -8, 500, -4, -9, 1500, 6000, 375, 4000, -18, 125, 156, 147, 139, 131, 123, 116, 104, 73, 92, 55, 65, 77, 208, 52, 62, 311, 44, -48, -28, -34, -66, -19, -10, 233, 277, 329, 933, 1760, 2093, 2794, 1865, 1109, 1661, 1480, 1245, 2217, 185, 1976, 2637, 2960, 2349, 3729, 2489, 320, 240, 480, 1280, 640, 1920, 192, -15, -12, 3840, 360, 212, 428, -5, 59, 69, 196, 46, 124, 61, 332, 249, 498, 664, 1328, 1992, 3984, 5976, -90, -14, 756, 189, 378, 567, 1134, -7, -16, -17, -38, -36, -55, -24, -176, 3, 37, 49, 41, 188, 376, 752, 564, -258, -132, -45, 94, -192, -144, 
+    0, -3, 330, 440, 523, 659, 622, 494, 587, -2, 466, 554, 698, 415, 220, 262, 880, 831, 784, 740, 294, 165, 110, 98, 87, 82, 349, 175, 370, -6, 247, 392, 988, 1047, 1175, 1319, 1397, 8000, 750, 250, 1000, 2000, -8, 500, -4, -9, 1500, 6000, 375, 4000, -18, 125, 156, 147, 139, 131, 123, 116, 104, 73, 92, 55, 65, 77, 208, 52, 62, 311, 44, -48, -28, -34, -66, -19, -10, 233, 277, 329, 933, 1760, 2093, 2794, 1865, 1109, 1661, 1480, 1245, 2217, 185, 1976, 2637, 2960, 2349, 3729, 2489, 320, 240, 480, 1280, 640, 1920, 192, -15, -12, 3840, 360, 212, 428, -5, 59, 69, 196, 46, 124, 61, 332, 249, 498, 664, 1328, 1992, 3984, 5976, -90, -14, 756, 189, 378, 567, 1134, -7, -16, -17, -38, -36, -55, -24, -176, 3, 37, 49, 41, 188, 376, 752, 564, -258, -132, -45, 94, -192, -144, 856, 214, 642, 107, -26, 1712, 117, 278, 932, 1568, 252, 504, 1008, 2016, 4032, 3024, 1512, 126, 3528, 336, 3000, 
 
 };
 
@@ -812,6 +814,9 @@ void yeetNoteTreble(int freq, int dur) {
   else if (songNumber == 67) {
     freq *= 2;
     dur = (int)(dur*0.9947089947+0.5);
+  }
+  else if (songNumber == 69) {
+    dur = (int)(dur*0.9920634921+0.5);
   }
   if (trebleTime == 0 || millis() - trebleStamp >= trebleTime) {  
     decodedTreble = false;
@@ -1474,6 +1479,12 @@ void setSong(int n) {
   } else if (songNumber == 67) {
     tmod = 0.7f; 
     yeetDur = 0.6f; 
+  } else if (songNumber == 68) {
+    tmod = 0.7f; 
+    yeetDur = 0.75f; 
+  } else if (songNumber == 69) {
+    tmod = 0.7f; 
+    yeetDur = 0.8f; 
   }
   
   
