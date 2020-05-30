@@ -1232,6 +1232,8 @@ void fancyInputStuffs() {
       } else {
         while (!SerialBT.connected(10000)) {
           Serial.println("Trying to connect");
+          delay(100);
+          yield();
         }
         Serial.println("out of loop");
       }
@@ -1253,6 +1255,8 @@ void fancyInputStuffs() {
       } else {
         while (!SerialBT.connected(10000)) {
           Serial.println("Trying to connect");
+          delay(100);
+          yield();
         }
         Serial.println("out of loop");
       }
