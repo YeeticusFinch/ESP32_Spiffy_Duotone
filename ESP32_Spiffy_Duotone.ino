@@ -53,8 +53,8 @@ const int NUMPIXELS = 15;
 
 //struct tm *timeinfo; //Some random line required for storing time, not sure why
 
-const int songCount = 70;
-String songs = "0) The Following Theme\n1) Stranger Things Title Screen\n2) Sonata in C 3rd Movement\n3) Doctor Who Theme\n4) Skyrim Title Screen\n5) Cello Concerto\n6) Secunda\n7) Evil Morty\n8) Ward\n9) Love the Way You Lie Skylit Drive Remix\n10) Spooky Scary Skeletons\n11) Seven Nation Army\n12) Goodbye Moonmen\n13) All Star but its so Beautiful\n14) Crab Rave\n15) Happy Birthday\n16) Natural\n17) Heathens\n18) Rick and Morty Intro\n19) Waterloo\n20) Take on Me\n21) Despacito\n22) Interstellar Firstep\n23) Overwatch Theme\n24) Control\n25) A Cruel Angel's Thesis Neon Genesis\n26) Soviet National Anthem\n27) Beastars OP\n28) Stairway to Heaven\n29) Memelovania\n30) Imagine Communism\n31) Sweeeeet Child O' Mine\n32) Kiss of Death\n33) The Game is On, Sherlock\n34) Bohemian Rhapsody\n35) Fade\n36) For Whom the Bell Tolls\n37) Cantina\n38) The Force Awakens - Rey's Theme\n39) Marble Machine - Wintergatan\n40) O Fortuna\n41) Crazy Train\n42) Thunderstruck\n43) Charol of the Bells\n44) Thomas the Dank Engine\n45) Højt fra træets grønne top\n46) Teeth\n47) Maple Leaf Rag\n48) A Cruel Angel's Meme\n49) The Other Side of Paradise\n50) InSaNiTy\n51) Ghost Fight\n52) I Am The Doctor\n53) Old Town Road\n54) Senorita\n55) Dance Monkey\n56) YMCA\n57) The Swan\n58) Sweet but Psycho\n59) Dear Society\n60) ﻿Uragirimono No Requiem (JoJo)\n61) Giorno's Theme (JoJo)\n62) A Butterflies Wings (JoJo Rabit)\n63) Every Girl's A Super Girl (JoJo)\n64) Clair De Lune\n65)Jazz In Paris\n66) Cohen's Masterpiece (Bioshock)\n67) Out Of The Black\n68) Moonage DayDream\n 69) Space Oddity";
+const int songCount = 71;
+String songs = "0) The Following Theme\n1) Stranger Things Title Screen\n2) Sonata in C 3rd Movement\n3) Doctor Who Theme\n4) Skyrim Title Screen\n5) Cello Concerto\n6) Secunda\n7) Evil Morty\n8) Ward\n9) Love the Way You Lie Skylit Drive Remix\n10) Spooky Scary Skeletons\n11) Seven Nation Army\n12) Goodbye Moonmen\n13) All Star but its so Beautiful\n14) Crab Rave\n15) Happy Birthday\n16) Natural\n17) Heathens\n18) Rick and Morty Intro\n19) Waterloo\n20) Take on Me\n21) Despacito\n22) Interstellar Firstep\n23) Overwatch Theme\n24) Control\n25) A Cruel Angel's Thesis Neon Genesis\n26) Soviet National Anthem\n27) Beastars OP\n28) Stairway to Heaven\n29) Memelovania\n30) Imagine Communism\n31) Sweeeeet Child O' Mine\n32) Kiss of Death\n33) The Game is On, Sherlock\n34) Bohemian Rhapsody\n35) Fade\n36) For Whom the Bell Tolls\n37) Cantina\n38) The Force Awakens - Rey's Theme\n39) Marble Machine - Wintergatan\n40) O Fortuna\n41) Crazy Train\n42) Thunderstruck\n43) Charol of the Bells\n44) Thomas the Dank Engine\n45) Højt fra træets grønne top\n46) Teeth\n47) Maple Leaf Rag\n48) A Cruel Angel's Meme\n49) The Other Side of Paradise\n50) InSaNiTy\n51) Ghost Fight\n52) I Am The Doctor\n53) Old Town Road\n54) Senorita\n55) Dance Monkey\n56) YMCA\n57) The Swan\n58) Sweet but Psycho\n59) Dear Society\n60) ﻿Uragirimono No Requiem (JoJo)\n61) Giorno's Theme (JoJo)\n62) A Butterflies Wings (JoJo Rabit)\n63) Every Girl's A Super Girl (JoJo)\n64) Clair De Lune\n65)Jazz In Paris\n66) Cohen's Masterpiece (Bioshock)\n67) Out Of The Black\n68) Moonage DayDream\n69) Space Oddity\n70) Changes";
 String fileNames[] = {
   "/TheFollowingTheme.txt",
   "/StrangerThingsTitleScreen.txt",
@@ -126,8 +126,9 @@ String fileNames[] = {
   "/Outofblack.txt",
   "/MoonageDaydream.txt",
   "/SpaceOddity.txt",
+  "/Changes.txt",
 };
-String newFeatures = "What's new?\n- Added 'Out Of The Black'\n- Added 'Moonage Daydream'\n- Added 'Space Oddity'";
+String newFeatures = "What's new?\n- Added 'Out Of The Black'\n- Added 'Moonage Daydream'\n- Added 'Space Oddity'\n- Added 'Changes'";
 int hourMod = 0;
 int minuteMod = 0;
 const int yeetSize = 16384;
@@ -155,7 +156,7 @@ int table4[] = {
 
 int table5[] = {
   //0, -3, 330, 440, 523, 659, 622, 494, 587, -2, 466, 554, 698, 415, 220, 262, 880, 831, 784, 740, 294, 165, 110, 98, 87, 82, 349, 175, 370, -6, 247, 392, 988, 1047, 1175, 1319, 1397, 8000, 750, 250, 1000, 2000, -8, 500, -4, -9, 1500, 6000, 375, 4000, -18, 125, 156, 147, 139, 131, 123, 116, 104, 73, 92, 55, 65, 77, 208, 52, 62, 311, 44, -48, -28, -34, -66, -19, -10, 
-    0, -3, 330, 440, 523, 659, 622, 494, 587, -2, 466, 554, 698, 415, 220, 262, 880, 831, 784, 740, 294, 165, 110, 98, 87, 82, 349, 175, 370, -6, 247, 392, 988, 1047, 1175, 1319, 1397, 8000, 750, 250, 1000, 2000, -8, 500, -4, -9, 1500, 6000, 375, 4000, -18, 125, 156, 147, 139, 131, 123, 116, 104, 73, 92, 55, 65, 77, 208, 52, 62, 311, 44, -48, -28, -34, -66, -19, -10, 233, 277, 329, 933, 1760, 2093, 2794, 1865, 1109, 1661, 1480, 1245, 2217, 185, 1976, 2637, 2960, 2349, 3729, 2489, 320, 240, 480, 1280, 640, 1920, 192, -15, -12, 3840, 360, 212, 428, -5, 59, 69, 196, 46, 124, 61, 332, 249, 498, 664, 1328, 1992, 3984, 5976, -90, -14, 756, 189, 378, 567, 1134, -7, -16, -17, -38, -36, -55, -24, -176, 3, 37, 49, 41, 188, 376, 752, 564, -258, -132, -45, 94, -192, -144, 856, 214, 642, 107, -26, 1712, 117, 278, 932, 1568, 252, 504, 1008, 2016, 4032, 3024, 1512, 126, 3528, 336, 3000, 
+    0, -3, 330, 440, 523, 659, 622, 494, 587, -2, 466, 554, 698, 415, 220, 262, 880, 831, 784, 740, 294, 165, 110, 98, 87, 82, 349, 175, 370, -6, 247, 392, 988, 1047, 1175, 1319, 1397, 8000, 750, 250, 1000, 2000, -8, 500, -4, -9, 1500, 6000, 375, 4000, -18, 125, 156, 147, 139, 131, 123, 116, 104, 73, 92, 55, 65, 77, 208, 52, 62, 311, 44, -48, -28, -34, -66, -19, -10, 233, 277, 329, 933, 1760, 2093, 2794, 1865, 1109, 1661, 1480, 1245, 2217, 185, 1976, 2637, 2960, 2349, 3729, 2489, 320, 240, 480, 1280, 640, 1920, 192, -15, -12, 3840, 360, 212, 428, -5, 59, 69, 196, 46, 124, 61, 332, 249, 498, 664, 1328, 1992, 3984, 5976, -90, -14, 756, 189, 378, 567, 1134, -7, -16, -17, -38, -36, -55, -24, -176, 3, 37, 49, 41, 188, 376, 752, 564, -258, -132, -45, 94, -192, -144, 856, 214, 642, 107, -26, 1712, 117, 278, 932, 1568, 252, 504, 1008, 2016, 4032, 3024, 1512, 126, 3528, 336, 3000, 2144, 268, -40, 1072, 134, 536, 804, -73, 1608, -11, -32, 402, -78, 67, 201, 33, -43, 1876, 
 
 };
 
@@ -275,14 +276,17 @@ void newYeetFile() {
   yeetFile.print("YOINK");
 }
 
+String btName;
+
 void setup() {
 
   
   
-  //SerialBT.begin("Garrett's Faaaancy Runestone!!!");
-  //SerialBT.begin("YEETICUS");
-  SerialBT.begin("Osman's Fancy Non-Rodent Watch");
-  //erialBT.begin("Clare's Fanciest Yeeter Watch");
+  //btName = "Garrett's Faaaancy Runestone!!!";
+  btName = "YEETICUS";
+  //btName = "Osman's Fancy Non-Rodent Watch";
+  //btName = "Clare's Fanciest Yeeter Watch";
+  SerialBT.begin(btName);
   Serial.begin(74880);
 
   if (!SPIFFS.begin(FORMAT_SPIFFS_IF_FAILED)) {
@@ -1044,6 +1048,9 @@ void IRAM_ATTR noTone(uint8_t pin, uint8_t channel)
     ledcWrite(channel, 0);
 }
 
+String MACadd = "AA:BB:CC:11:22:33";      // I was told that I needed both of these lines???????
+uint8_t address[6]  = {0xAA, 0xBB, 0xCC, 0x11, 0x22, 0x33};
+
 void fancyInputStuffs() {
   if (SerialBT.available()) {
     String input = "";
@@ -1057,7 +1064,7 @@ void fancyInputStuffs() {
     //uint8_t *buf;
     
     if (input.equals("?") || input.equals("help")) {
-      SerialBT.println("Commands:\nbright# -- sets the brightness (# is a percent)\nplay --> plays the current song\nstop --> stops all music\np --> toggles pause\nsongs --> lists all available songs\nsn# --> substitute the desired song number for '#', it will switch to the song of that number\nrwd --> rewinds the song\nl# --> sets the light mode\nlm --> lists the light modes\nlights --> toggles lights on/off\nls# --> sets speed of lights\ntime#:# --> sets the time\nposa --> activites power saver mode (time is displayed, LEDs updated every few seconds)\ngetTime --> returns the current time\nc#:r,g,b --> store an rgb value\nlsc --> list stored colors\nrep --> toggle repeat\nshuf --> toggle shuffle\nrand --> plays a random song\nnew --> lists all the new features\nvo# --> set volume to #");
+      SerialBT.println("Commands:\nbright# -- sets the brightness (# is a percent)\nplay --> plays the current song\nstop --> stops all music\np --> toggles pause\nsongs --> lists all available songs\nsn# --> substitute the desired song number for '#', it will switch to the song of that number\nrwd --> rewinds the song\nl# --> sets the light mode\nlm --> lists the light modes\nlights --> toggles lights on/off\nls# --> sets speed of lights\ntime#:# --> sets the time\nposa --> activites power saver mode (time is displayed, LEDs updated every few seconds)\ngetTime --> returns the current time\nc#:r,g,b --> store an rgb value\nlsc --> list stored colors\nrep --> toggle repeat\nshuf --> toggle shuffle\nrand --> plays a random song\nnew --> lists all the new features\nvo# --> set volume to #\noms# <device 1> <device 2>--> initiates orchestra mode, device names must be surrounded by < >, just like in HTML, # should be substituted with the song number (only for master)");
     }
     else if (input.equals("new")) {
       SerialBT.println(newFeatures);
@@ -1192,6 +1199,76 @@ void fancyInputStuffs() {
       storedColors[n*3] = r;
       storedColors[n*3+1] = g;
       storedColors[n*3+2] = b;
+      
+    }
+    //message looks like this (the 'c' can be any char between a, b, and c) --> ot#:c:#
+    else if (input.substring(0,2).equals("ot") && input.length() > 3) {
+      
+    }
+    //message looks like this --> oms# <device 1> <device 2>
+    else if (input.substring(0,3).equals("oms") && input.length() > 4) {
+      int a = input.indexOf('<');
+      int b = input.indexOf('>', a+1);
+      int c = input.indexOf('<', b+1);
+      int d = input.indexOf('>', c+1);
+      
+      String device1 = input.substring(a+1, b); //gets the device names from the message
+      String device2 = input.substring(c+1, d);
+      
+      Serial.println(2);
+      int oSong = input.substring(3, a-1).toInt(); //gets the orchestra song number
+
+      String message2 = "Trying to connect to " + device1 + " and " + device2;
+      
+      SerialBT.println(message2);
+      
+      delay(1000);
+      SerialBT.end();
+      delay(2000);
+      SerialBT.begin("andrewRyan", true); //the 'true' means to start in master mode
+      delay(2000);
+      if (SerialBT.connect(device1)) { //connects to device1   ////// This crashes the ESP32, idk why, I have been testing with another board
+        Serial.println("connected successfully");
+      } else {
+        while (!SerialBT.connected(10000)) {
+          Serial.println("Trying to connect");
+        }
+        Serial.println("out of loop");
+      }
+      //ot0:b:12000
+      String message = "ot";
+      message += oSong;
+      message += ":b:12000";
+      SerialBT.print(message); //sends the trigger phrase
+      long temp = millis(); //saves the time when the trigger phrase was sent
+
+      if (SerialBT.disconnect()) {  //Disconnect from the device
+        Serial.println("disconnected");
+      }
+
+      //  OK ITS TIME FOR DEVICE 2
+
+      if (SerialBT.connect(device2)) { //connects to device1
+        Serial.println("connected successfully");
+      } else {
+        while (!SerialBT.connected(10000)) {
+          Serial.println("Trying to connect");
+        }
+        Serial.println("out of loop");
+      }
+      //ot0:b:12000
+      message = "ot";
+      message += oSong;
+      message += ":c:0";
+
+      delay(12000 - millis() + temp); //waits the delay-time
+      SerialBT.print(message); //sends the trigger phrase
+
+      if (SerialBT.disconnect()) {   //Disconnect from the device
+        Serial.println("disconnected");
+      }
+
+      SerialBT.begin(btName);
       
     }
   }
@@ -1485,6 +1562,9 @@ void setSong(int n) {
   } else if (songNumber == 69) {
     tmod = 0.7f; 
     yeetDur = 0.8f; 
+  } else if (songNumber == 70) {
+    tmod = 0.6f; 
+    yeetDur = 0.7f; 
   }
   
   
