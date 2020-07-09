@@ -131,6 +131,8 @@ String fileNames[] = {
 String newFeatures = "What's new?\n- Added 'Out Of The Black'\n- Added 'Moonage Daydream'\n- Added 'Space Oddity'\n- Added 'Changes'";
 int hourMod = 0;
 int minuteMod = 0;
+long millisMod = 0;
+long playAt = -1;
 const int yeetSize = 16384;
 char (*(yeet[])) = {(char *)malloc(yeetSize), (char *)malloc(yeetSize), (char *)malloc(yeetSize), (char *)malloc(yeetSize)}; //YEEET
 
@@ -365,6 +367,13 @@ void loop() {
     timeStuff();
     delay(5000);
   } else {
+    if (playAt != -1 && playAt <= millis()+millisMod) {
+      //Serial.print(millis()+millisMod);
+      //Serial.print(">=");
+      //Serial.println(playAt);
+      playAt = -1;
+      playing = true;
+    }
     if (loopCount > 2000) {
       timeStuff();
       loopCount = 0;
@@ -1096,6 +1105,10 @@ void fancyInputStuffs() {
       SerialBT.print("Play Music = ");
       SerialBT.println(playing);
     }
+    else if (input.substring(0, 4).equals("schp")) {
+      SerialBT.print("Playing soon");
+      playAt = input.substring(4).toInt();
+    }
     else if (input.equals("songs")) {
       SerialBT.println(songs);
     }
@@ -1164,6 +1177,9 @@ void fancyInputStuffs() {
       SerialBT.print(hour + hourMod);
       SerialBT.print(" minutes = ");
       SerialBT.println(minutes + minuteMod);
+    }
+    else if (input.substring(0, 5).equals("etime")) {
+      millisMod = input.substring(5).toInt() - millis();
     }
     else if (input.substring(0, 2).equals("ls")) {
       lightSpeed = input.substring(2).toInt();
