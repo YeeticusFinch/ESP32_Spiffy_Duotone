@@ -135,7 +135,7 @@ String fileNames[] = {
   "/TeethA.txt",
   "/TeethB.txt",
   "/7NationA.txt",
-  "7NationB.txt",
+  "/7NationB.txt",
 };
 String newFeatures = "What's new?\n- Gave up on the changelog";
 int hourMod = 0;
