@@ -301,6 +301,7 @@ void setup() {
   ////////////////////////////////////////////////////////////HEY WEIRDO, THIS IS IMPORTANT, CHOOSE THE BLUETOOTH NAME OF YOUR WATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   //btName = "Garrett's Faaaancy Runestone!!!";
   btName = "YEETICUS";
+  //btName = "yeeticus2";
   //btName = "Osman's Fancy Non-Rodent Watch";
   //btName = "Clare's Fanciest Yeeter Watch";
   SerialBT.begin(btName);
