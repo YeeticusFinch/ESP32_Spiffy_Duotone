@@ -46,6 +46,9 @@
 
 BluetoothSerial SerialBT;
 
+int mOffset = 0; //choose this one if you have a Lolin32
+//int mOffset = -800; //Choose this one if you have a TTGO
+
 const int NUMPIXELS = 15;
 //ESPRMTLED FastLED = ESPRMTLED(NUMPIXELS, 18, RMT_CHANNEL_0);
 
@@ -213,6 +216,7 @@ int getSize(int n) {
 
 hw_timer_t * timer = NULL;
 hw_timer_t * timer2 = NULL;
+hw_timer_t * timer3 = NULL;
 
 uint8_t pin1;
 uint8_t channel1;
@@ -235,6 +239,10 @@ void IRAM_ATTR onTimer2(){
   //Serial.println("Yeet, we got an interrupt");
   ledcWrite(channel2, 0);
   //noTone(pin2, channel2);
+}
+void IRAM_ATTR onTimer3() {
+  playAt = -1;
+  playing = true;
 }
 
 int jj[15];
@@ -349,6 +357,7 @@ int hour = 0;
 int day = 0;
 int month = 0;
 unsigned int loopCount = 0;
+boolean holdAction = false;
 void loop() {
   // put your main code here, to run repeatedly:
   /*if (WiFi.status() == WL_CONNECTED) {
@@ -363,6 +372,9 @@ void loop() {
     tone(buzzer1, 3500, 100, 0, 0);
     delay(500);
   }*/
+  while (holdAction) {
+    fancyInputStuffs();
+  }
   fancyInputStuffs();
 
   if (posa) {
@@ -370,13 +382,13 @@ void loop() {
     timeStuff();
     delay(5000);
   } else {
-    if (playAt != -1 && playAt <= millis()+millisMod) {
+    /*if (playAt != -1 && playAt <= millis()+millisMod) {
       //Serial.print(millis()+millisMod);
       //Serial.print(">=");
       //Serial.println(playAt);
       playAt = -1;
       playing = true;
-    }
+    }*/
     if (loopCount > 2000) {
       timeStuff();
       loopCount = 0;
@@ -1106,11 +1118,17 @@ void fancyInputStuffs() {
     else if (input.equals("p")) {
       playing = !playing;
       SerialBT.print("Play Music = ");
-      SerialBT.println(playing);
+      SerialBT.println(playing);// -775   -983
+      SerialBT.println(millis()+millisMod); // 24112464 24113239   24173835 24174818
     }
     else if (input.substring(0, 4).equals("schp")) {
       SerialBT.print("Playing soon");
       playAt = input.substring(4).toInt();
+      
+      timer3 = timerBegin(0, 80, true);
+      timerAttachInterrupt(timer3, &onTimer3, true);
+      timerAlarmWrite(timer3, (playAt-millis()-millisMod)*1000, false);
+      timerAlarmEnable(timer3);
     }
     else if (input.equals("songs")) {
       SerialBT.println(songs);
@@ -1181,8 +1199,27 @@ void fancyInputStuffs() {
       SerialBT.print(" minutes = ");
       SerialBT.println(minutes + minuteMod);
     }
+    else if (input.equalsIgnoreCase("ha")) {
+      holdAction = true;
+      while (!SerialBT.available()) {
+        delay(20);
+      }
+      input = "";
+      while (SerialBT.available()) {
+        input += (char)SerialBT.read();
+        //yield();
+      }
+      input.trim();
+      if (input.substring(0, 5).equals("etime")) {
+        millisMod = input.substring(5).toInt() - millis() + mOffset;
+        holdAction = false;
+        Serial.println("yeet");
+      }
+      
+    }
     else if (input.substring(0, 5).equals("etime")) {
-      millisMod = input.substring(5).toInt() - millis();
+      millisMod = input.substring(5).toInt() - millis() + mOffset;
+      holdAction = false;
     }
     else if (input.substring(0, 2).equals("ls")) {
       lightSpeed = input.substring(2).toInt();
