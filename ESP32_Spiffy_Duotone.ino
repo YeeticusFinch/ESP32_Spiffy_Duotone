@@ -1643,8 +1643,8 @@ void setSong(int n) {
     tmod = 0.8f;
     yeetDur = 0.6f;
   } else if (songNumber == 75) {
-    tmod = 0.8f;
-    yeetDur = 0.6f;
+    tmod = 0.95f;
+    yeetDur = 0.65f;
   }
   
   
