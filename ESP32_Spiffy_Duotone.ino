@@ -531,10 +531,7 @@ size_t readField(char* str2, size_t size, char* delim) {
 }
 
 String getYeetSong(int superFancyNumber) {
-  if (superFancyNumber < 82)
-    return fileNames[superFancyNumber];
-  else
-    return fileNames2[superFancyNumber-82];
+  return fileNames[superFancyNumber];
 }
 
 void binaryTime() { //Taken straight from my watch
