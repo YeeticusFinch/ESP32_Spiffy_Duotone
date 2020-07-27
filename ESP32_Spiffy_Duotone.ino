@@ -143,8 +143,13 @@ String fileNames[] = {
   "/CohenA.txt",
   "/CohenB.txt",
   "/CohenC.txt",
-  "/RWBY.txt",
+  "/theDay.txt",
 };
+
+String fileNames2[] = {
+  
+};
+
 String newFeatures = "What's new?\n- Gave up on the changelog";
 int hourMod = 0;
 int minuteMod = 0;
