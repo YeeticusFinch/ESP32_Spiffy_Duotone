@@ -143,7 +143,7 @@ String fileNames[] = {
   "/CohenA.txt",
   "/CohenB.txt",
   "/CohenC.txt",
-  "/TheDay.txt",
+  "/theDay.txt",
   "/Criminal.txt",
 };
 
@@ -1670,7 +1670,7 @@ void setSong(int n) {
     tmod = 0.7f; 
     yeetDur = 0.8f; 
   } else if (songNumber == 82) {
-    tmod = 0.95f;
+    tmod = 0.18f;
     yeetDur = 0.65f;
   } else if (songNumber == 83) {
     tmod = 0.25f;
