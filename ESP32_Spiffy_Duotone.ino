@@ -142,8 +142,10 @@ String fileNames[] = {
   "/HyattC.txt",
   "/CohenA.txt",
   "/CohenB.txt",
-  "/CohenC.txt",
-  "/RWBY.txt",
+  "/CohenC.txt"
+};
+String fileNames2[] = {
+  "/theDay.txt",
 };
 String newFeatures = "What's new?\n- Gave up on the changelog";
 int hourMod = 0;
@@ -527,7 +529,10 @@ size_t readField(char* str2, size_t size, char* delim) {
 }
 
 String getYeetSong(int superFancyNumber) {
-  return fileNames[superFancyNumber];
+  if (superFancyNumber < 82)
+    return fileNames[superFancyNumber];
+  else
+    return fileNames2[superFancyNumber-82];
 }
 
 void binaryTime() { //Taken straight from my watch
