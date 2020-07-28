@@ -1694,14 +1694,14 @@ void setSong(int n) {
     tmod = 0.2f;
     yeetDur = 0.65f;
   } else if (songNumber == 87 || songNumber == 88 || songNumber == 89) {
-    tmod = 0.3f;
+    tmod = 0.8f;
     yeetDur = 0.7f;
   } else if (songNumber == 90 || songNumber == 91 || songNumber == 92) {
-    tmod = 0.3f;
+    tmod = 0.25f;
     yeetDur = 0.6f;
   } else if (songNumber == 93) {
-    tmod = 0.3f;
-    yeetDur = 0.6f;
+    tmod = 0.6f;
+    yeetDur = 0.8f;
   } 
   
   
