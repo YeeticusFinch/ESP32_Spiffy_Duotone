@@ -1703,7 +1703,7 @@ void setSong(int n) {
     tmod = 0.6f;
     yeetDur = 0.8f;
   } else if (songNumber == 94 || songNumber == 95) {
-    tmod = 0.3f;
+    tmod = 0.66f;
     yeetDur = 0.6f;
   } 
   
