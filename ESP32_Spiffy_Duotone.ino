@@ -58,8 +58,8 @@ const int NUMPIXELS = 15;
 
 //struct tm *timeinfo; //Some random line required for storing time, not sure why
 
-const int songCount = 84;
-String songs = "0) The Following Theme\n1) Stranger Things Title Screen\n2) Sonata in C 3rd Movement\n3) Doctor Who Theme\n4) Skyrim Title Screen\n5) Cello Concerto\n6) Secunda\n7) Evil Morty\n8) Ward\n9) Love the Way You Lie Skylit Drive Remix\n10) Spooky Scary Skeletons\n11) Seven Nation Army\n12) Goodbye Moonmen\n13) All Star but its so Beautiful\n14) Crab Rave\n15) Happy Birthday\n16) Natural\n17) Heathens\n18) Rick and Morty Intro\n19) Waterloo\n20) Take on Me\n21) Despacito\n22) Interstellar Firstep\n23) Overwatch Theme\n24) Control\n25) A Cruel Angel's Thesis Neon Genesis\n26) Soviet National Anthem\n27) Beastars OP\n28) Stairway to Heaven\n29) Memelovania\n30) Imagine Communism\n31) Sweeeeet Child O' Mine\n32) Kiss of Death\n33) The Game is On, Sherlock\n34) Bohemian Rhapsody\n35) Fade\n36) For Whom the Bell Tolls\n37) Cantina\n38) The Force Awakens - Rey's Theme\n39) Marble Machine - Wintergatan\n40) O Fortuna\n41) Crazy Train\n42) Thunderstruck\n43) Charol of the Bells\n44) Thomas the Dank Engine\n45) Højt fra træets grønne top\n46) Teeth\n47) Maple Leaf Rag\n48) A Cruel Angel's Meme\n49) The Other Side of Paradise\n50) InSaNiTy\n51) Ghost Fight\n52) I Am The Doctor\n53) Old Town Road\n54) Senorita\n55) Dance Monkey\n56) YMCA\n57) The Swan\n58) Sweet but Psycho\n59) Dear Society\n60) ﻿Uragirimono No Requiem (JoJo)\n61) Giorno's Theme (JoJo)\n62) A Butterflies Wings (JoJo Rabit)\n63) Every Girl's A Super Girl (JoJo)\n64) Clair De Lune\n65)Jazz In Paris\n66) Cohen's Masterpiece (Bioshock)\n67) Out Of The Black\n68) Moonage DayDream\n69) Space Oddity\n70) Changes\n71) Teeth A\n72) Teeth B\n73) Seven Nation Army A\n74) 7 Nation Army B\n75) Great War - Sabaton\n76) Hyatt A\n77) Hyatt B\n78) Hyatt C\n79) Cohen A\n80) Cohen B\n81) Cohen C\n82) RWBY\n83) Criminal";
+const int songCount = 86;
+String songs = "0) The Following Theme\n1) Stranger Things Title Screen\n2) Sonata in C 3rd Movement\n3) Doctor Who Theme\n4) Skyrim Title Screen\n5) Cello Concerto\n6) Secunda\n7) Evil Morty\n8) Ward\n9) Love the Way You Lie Skylit Drive Remix\n10) Spooky Scary Skeletons\n11) Seven Nation Army\n12) Goodbye Moonmen\n13) All Star but its so Beautiful\n14) Crab Rave\n15) Happy Birthday\n16) Natural\n17) Heathens\n18) Rick and Morty Intro\n19) Waterloo\n20) Take on Me\n21) Despacito\n22) Interstellar Firstep\n23) Overwatch Theme\n24) Control\n25) A Cruel Angel's Thesis Neon Genesis\n26) Soviet National Anthem\n27) Beastars OP\n28) Stairway to Heaven\n29) Memelovania\n30) Imagine Communism\n31) Sweeeeet Child O' Mine\n32) Kiss of Death\n33) The Game is On, Sherlock\n34) Bohemian Rhapsody\n35) Fade\n36) For Whom the Bell Tolls\n37) Cantina\n38) The Force Awakens - Rey's Theme\n39) Marble Machine - Wintergatan\n40) O Fortuna\n41) Crazy Train\n42) Thunderstruck\n43) Charol of the Bells\n44) Thomas the Dank Engine\n45) Højt fra træets grønne top\n46) Teeth\n47) Maple Leaf Rag\n48) A Cruel Angel's Meme\n49) The Other Side of Paradise\n50) InSaNiTy\n51) Ghost Fight\n52) I Am The Doctor\n53) Old Town Road\n54) Senorita\n55) Dance Monkey\n56) YMCA\n57) The Swan\n58) Sweet but Psycho\n59) Dear Society\n60) ﻿Uragirimono No Requiem (JoJo)\n61) Giorno's Theme (JoJo)\n62) A Butterflies Wings (JoJo Rabit)\n63) Every Girl's A Super Girl (JoJo)\n64) Clair De Lune\n65)Jazz In Paris\n66) Cohen's Masterpiece (Bioshock)\n67) Out Of The Black\n68) Moonage DayDream\n69) Space Oddity\n70) Changes\n71) Teeth A\n72) Teeth B\n73) Seven Nation Army A\n74) 7 Nation Army B\n75) Great War - Sabaton\n76) Hyatt A\n77) Hyatt B\n78) Hyatt C\n79) Cohen A\n80) Cohen B\n81) Cohen C\n82) RWBY\n83) Criminal\n84) Crystal Dolphin A\n85) Crystal Dolphin B\n86) Brass Knob";
 String fileNames[] = {
   "/TheFollowingTheme.txt",
   "/StrangerThingsTitleScreen.txt",
@@ -145,6 +145,9 @@ String fileNames[] = {
   "/CohenC.txt",
   "/theDay.txt",
   "/Criminal.txt",
+  "/CrystalA.txt",
+  "/CrystalB.txt",
+  "/BrassKnob.txt",
 };
 
 String newFeatures = "What's new?\n- Gave up on the changelog";
@@ -183,9 +186,10 @@ int table5[] = {
 };
 
 int table6[] = {
-  //73, -3, 87, 82, 110, 131, 123, 0, 440, -2, 392, 349, 330, 294, 587, 466, 523, 659, 262, -7, -6, 220, -4, 698, 147, 175, 165, 880, 784, 1047, 1175, 1397, 933, 1319, 1109, 233, 247, 196, -12, 116, 98, 1760, 250, -48, 500, -5, 1000, 750, 2000, 1500, 125, -35, 35, -8, -11, 63, 375, 83, -24, -9, 37, 44, 41, -32, -28, -16, -15, 139, 55, 554, 59, 277, 208, 185, 156, -19, -13, -92, -62, -61, -191, -60, -162, -14, -78, -66, 
   //73, -3, 87, 82, 110, 131, 123, 0, 440, -2, 392, 349, 330, 294, 587, 466, 523, 659, 262, -7, -6, 220, -4, 698, 147, 175, 165, 880, 784, 1047, 1175, 1397, 933, 1319, 1109, 233, 247, 196, -12, 116, 98, 1760, 250, -48, 500, -5, 1000, 750, 2000, 1500, 125, -35, 35, -8, -11, 63, 375, 83, -24, -9, 37, 44, 41, -32, -28, -16, -15, 139, 55, 554, 59, 277, 208, 185, 156, -19, -13, -92, -62, -61, -191, -60, -162, -14, -78, -66, 494, 740, 988, 4000, -10, -256, 
-  73, -3, 87, 82, 110, 131, 123, 0, 440, -2, 392, 349, 330, 294, 587, 466, 523, 659, 262, -7, -6, 220, -4, 698, 147, 175, 165, 880, 784, 1047, 1175, 1397, 933, 1319, 1109, 233, 247, 196, -12, 116, 98, 1760, 250, -48, 500, -5, 1000, 750, 2000, 1500, 125, -35, 35, -8, -11, 63, 375, 83, -24, -9, 37, 44, 41, -32, -28, -16, -15, 139, 55, 554, 59, 277, 208, 185, 156, -19, -13, -92, -62, -61, -191, -60, -162, -14, -78, -66, 494, 740, 988, 4000, -10, -256, 3000, 2250, 6000, 4500, -33, 106, 188, 1125, -189, 
+  //73, -3, 87, 82, 110, 131, 123, 0, 440, -2, 392, 349, 330, 294, 587, 466, 523, 659, 262, -7, -6, 220, -4, 698, 147, 175, 165, 880, 784, 1047, 1175, 1397, 933, 1319, 1109, 233, 247, 196, -12, 116, 98, 1760, 250, -48, 500, -5, 1000, 750, 2000, 1500, 125, -35, 35, -8, -11, 63, 375, 83, -24, -9, 37, 44, 41, -32, -28, -16, -15, 139, 55, 554, 59, 277, 208, 185, 156, -19, -13, -92, -62, -61, -191, -60, -162, -14, -78, -66, 494, 740, 988, 4000, -10, -256, 3000, 2250, 6000, 4500, -33, 106, 188, 1125, -189, 
+  //73, -3, 87, 82, 110, 131, 123, 0, 440, -2, 392, 349, 330, 294, 587, 466, 523, 659, 262, -7, -6, 220, -4, 698, 147, 175, 165, 880, 784, 1047, 1175, 1397, 933, 1319, 1109, 233, 247, 196, -12, 116, 98, 1760, 250, -48, 500, -5, 1000, 750, 2000, 1500, 125, -35, 35, -8, -11, 63, 375, 83, -24, -9, 37, 44, 41, -32, -28, -16, -15, 139, 55, 554, 59, 277, 208, 185, 156, -19, -13, -92, -62, -61, -191, -60, -162, -14, -78, -66, 494, 740, 988, 4000, -10, -256, 3000, 2250, 6000, 4500, -33, 106, 188, 1125, -189, 831, 300, 1200, 900, 450, 150, 600, 1800, 400, 2400, 
+  73, -3, 87, 82, 110, 131, 123, 0, 440, -2, 392, 349, 330, 294, 587, 466, 523, 659, 262, -7, -6, 220, -4, 698, 147, 175, 165, 880, 784, 1047, 1175, 1397, 933, 1319, 1109, 233, 247, 196, -12, 116, 98, 1760, 250, -48, 500, -5, 1000, 750, 2000, 1500, 125, -35, 35, -8, -11, 63, 375, 83, -24, -9, 37, 44, 41, -32, -28, -16, -15, 139, 55, 554, 59, 277, 208, 185, 156, -19, -13, -92, -62, -61, -191, -60, -162, -14, -78, -66, 494, 740, 988, 4000, -10, -256, 3000, 2250, 6000, 4500, -33, 106, 188, 1125, -189, 831, 300, 1200, 900, 450, 150, 600, 1800, 400, 2400, 622, 311, 415, 370, 8000, 104, 
 };
 
 short hist[songCount];
@@ -1674,6 +1678,12 @@ void setSong(int n) {
     yeetDur = 0.65f;
   } else if (songNumber == 83) {
     tmod = 0.25f;
+    yeetDur = 0.65f;
+  } else if (songNumber == 84 || songNumber = 85) {
+    tmod = 0.3f;
+    yeetDur = 0.65f;
+  } else if (songNumber == 86) {
+    tmod = 0.3f;
     yeetDur = 0.65f;
   } 
   
