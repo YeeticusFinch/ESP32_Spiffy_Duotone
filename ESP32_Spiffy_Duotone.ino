@@ -46,18 +46,19 @@
 
 BluetoothSerial SerialBT;
 
-//////////////////////////// HEY WEIRDO!!! THIS IS IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//////////////////////////// HEY FELLOW WATCH USER!!! THIS IS IMPORTANT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 int mOffset = 0; //choose this one if you have a Lolin32
 //int mOffset = -800; //Choose this one if you have a TTGO
 
-const int NUMPIXELS = 15;
+const int NUMPIXELS = 15; //Switch this to however many Neopixel LEDs your watch has
 //ESPRMTLED FastLED = ESPRMTLED(NUMPIXELS, 18, RMT_CHANNEL_0);
 
 //Adafruit_NeoPixel FastLED = Adafruit_NeoPixel(15, 18, NEO_GRB + NEO_KHZ800);
 
-//struct tm *timeinfo; //Some random line required for storing time, not sure why
+//struct tm *timeinfo; //Some random line required for storing time, not sure why, oh apparantly not anymore
 
+//songCount doesn't really matter, songs is just the names that get sent to the user's phone, fileNames[] is the important one
 const int songCount = 96;
 String songs = "0) The Following Theme\n1) Stranger Things Title Screen\n2) Sonata in C 3rd Movement\n3) Doctor Who Theme\n4) Skyrim Title Screen\n5) Cello Concerto\n6) Secunda\n7) Evil Morty\n8) Ward\n9) Love the Way You Lie Skylit Drive Remix\n10) Spooky Scary Skeletons\n11) Seven Nation Army\n12) Goodbye Moonmen\n13) All Star but its so Beautiful\n14) Crab Rave\n15) Happy Birthday\n16) Natural\n17) Heathens\n18) Rick and Morty Intro\n19) Waterloo\n20) Take on Me\n21) Despacito\n22) Interstellar Firstep\n23) Overwatch Theme\n24) Control\n25) A Cruel Angel's Thesis Neon Genesis\n26) Soviet National Anthem\n27) Beastars OP\n28) Stairway to Heaven\n29) Memelovania\n30) Imagine Communism\n31) Sweeeeet Child O' Mine\n32) Kiss of Death\n33) The Game is On, Sherlock\n34) Bohemian Rhapsody\n35) Fade\n36) For Whom the Bell Tolls\n37) Cantina\n38) The Force Awakens - Rey's Theme\n39) Marble Machine - Wintergatan\n40) O Fortuna\n41) Crazy Train\n42) Thunderstruck\n43) Charol of the Bells\n44) Thomas the Dank Engine\n45) Højt fra træets grønne top\n46) Teeth\n47) Maple Leaf Rag\n48) A Cruel Angel's Meme\n49) The Other Side of Paradise\n50) InSaNiTy\n51) Ghost Fight\n52) I Am The Doctor\n53) Old Town Road\n54) Senorita\n55) Dance Monkey\n56) YMCA\n57) The Swan\n58) Sweet but Psycho\n59) Dear Society\n60) ﻿Uragirimono No Requiem (JoJo)\n61) Giorno's Theme (JoJo)\n62) A Butterflies Wings (JoJo Rabit)\n63) Every Girl's A Super Girl (JoJo)\n64) Clair De Lune\n65)Jazz In Paris\n66) Cohen's Masterpiece (Bioshock)\n67) Out Of The Black\n68) Moonage DayDream\n69) Space Oddity\n70) Changes\n71) Teeth A\n72) Teeth B\n73) Seven Nation Army A\n74) 7 Nation Army B\n75) Great War - Sabaton\n76) Hyatt A\n77) Hyatt B\n78) Hyatt C\n79) Cohen A\n80) Cohen B\n81) Cohen C\n82) RWBY\n83) Criminal\n84) Crystal Dolphin A\n85) Crystal Dolphin B\n86) Brass Knob\n87) Bang A\n88) Bang B\n89) Bang C\n90) Crab Rave A\n91) Crab Rave B\n92) Crab Rave C\n93) Russian Crab Rave\n94) Gourmet Race A\n95) Gourmet Race B\n96) Your Turn to Roll";
 String fileNames[] = {
@@ -170,6 +171,7 @@ char (*(yeet[])) = {(char *)malloc(yeetSize), (char *)malloc(yeetSize), (char *)
 
 File file;
 
+//Symbol tables, they can't exceed 256 entries
 int table[] = { 
 //0,  1,    2,    3,    4,    5,    6,  7,   8,   9,  10,  11,  12,   13,   14,  15, 16,  17,  18,  19, 20,   21,   22,  23, 24,   25,   26, 27,  28,  29,  30,  31, 32,  33,  34,   35,  36,  37, 38, 39,  40,   41, 42,   43, 44, 45, 46,  47,  48,  49,   50, 51,  52,  53,  54,  55,  56,  57,   58,  59,  60,  61,  62,  63,   64, 65,  66,  67,  68,  69,  70,  71,  72,  73,  74,  75,  76,  77,
   0, -2, 1760, 1397, 1568, 1319, 1175, 55, 440, 349, 392, 330, 294, 1480, 1109, 988, 47, 370, 278, 247, -7, 6000, 1000, 500, -5, 8000, 2000, -4, 110, 131, 175, 165, 92, 147, 139, -228, 196, 262, 82, 98, 123, -240, -6, 4000, 73, 41, 62, 659, 587, 494, 1500, -3, 784, 698, 523, 554, 880, 740, 1047, 831, 622, 466, 415, 311, 1245, -8, -16, -12, -32, -14, -22, -28, -10, -60, 220, 185, 208, -68, 12000, 3000, -11, -9, -96, -49, -18, 117, 156, 65, 49, 933, 668, 334, 2004, 1336, 501, 167, 77, 59, 233, 664, 332, 1328, 996, 1992, 83, 166, 2093, 1865, 1661, 408, -58, 816, 204, -62, -31, 136, 102, -128, 51, 612, 33, 37, 39, 31, 52, 104, 116, 87, 44, 1600, 800, 400, 200, 600, -30, -36, -46, 1112, 834, 2224, 556, -20, -24, -82, 417, -57, -230, -224, -17, 1560, 390, 780, 585, 195, 1170, -13, 3120, -64, -15, 2340, -136, 932, 1200, 3951, 277, 2637, 3136, 2349, 1976, 2489, 2960, 3520, 381, 127, 254, 1016, 508, 1524, 762, 2032, -19, 828, 621, 414, 207, 1656, 3312, 1242, 276, 2484, 1449, 69, 1248, 416, 1664, 832, -79, 3328, 1872, 624, 312, 468, 1092, 936, -21, 2496, 61, 124, -51, -26, -52, 240, 120, 480, 250, 2400, 300, 150, -48, 450, 900, 225, 75, 1800, 182, 91, 728, 364, 1456, 546, -100, 4186, 3729, 3322, 2794, 2217, 1056, 176, 1408, 528, 704, 352, 1232, -124, 356, 178, 1424, 
@@ -202,6 +204,7 @@ int table6[] = {
   73, -3, 87, 82, 110, 131, 123, 0, 440, -2, 392, 349, 330, 294, 587, 466, 523, 659, 262, -7, -6, 220, -4, 698, 147, 175, 165, 880, 784, 1047, 1175, 1397, 933, 1319, 1109, 233, 247, 196, -12, 116, 98, 1760, 250, -48, 500, -5, 1000, 750, 2000, 1500, 125, -35, 35, -8, -11, 63, 375, 83, -24, -9, 37, 44, 41, -32, -28, -16, -15, 139, 55, 554, 59, 277, 208, 185, 156, -19, -13, -92, -62, -61, -191, -60, -162, -14, -78, -66, 494, 740, 988, 4000, -10, -256, 3000, 2250, 6000, 4500, -33, 106, 188, 1125, -189, 831, 300, 1200, 900, 450, 150, 600, 1800, 400, 2400, 622, 311, 415, 370, 8000, 104, 1712, 856, 214, 428, 642, -23, 124, 107, -30, 65, -64, 932, 1568, 92, 376, 94, 752, 1504, 47, 1128, 282, 49, 29, 117, 58, 33, 2093, 1245, 1865, 1976, 324, 162, 648, 486, 81, -18, -126, -124, 77, 278, -96, 
 };
 
+//To make the shuffle a little more insteresting and less repetitive
 short hist[songCount];
 
 boolean compressed = true;
@@ -328,12 +331,8 @@ String btName;
 void setup() {
 
   
-  ////////////////////////////////////////////////////////////HEY WEIRDO, THIS IS IMPORTANT, CHOOSE THE BLUETOOTH NAME OF YOUR WATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  //btName = "Garrett's Faaaancy Runestone!!!";
+  ////////////////////////////////////////////////////////////HEY FELLOW WATCH USER, THIS IS IMPORTANT, CHOOSE THE BLUETOOTH NAME OF YOUR WATCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   btName = "YEETICUS";
-  //btName = "yeeticus2";
-  //btName = "Osman's Fancy Non-Rodent Watch";
-  //btName = "Clare's Fanciest Yeeter Watch";
   SerialBT.begin(btName);
   Serial.begin(74880);
 
@@ -548,7 +547,7 @@ String getYeetSong(int superFancyNumber) {
   return fileNames[superFancyNumber];
 }
 
-void binaryTime() { //Taken straight from my watch
+void binaryTime() { //Taken straight from my old watch
 
   int s = sec;
   int m = minutes;
@@ -590,7 +589,7 @@ void binaryTime() { //Taken straight from my watch
   FastLED.show();
 }
 
-int binaryCheck(int n, int i) { //Taken straight from my watch, litterally forgot how it works
+int binaryCheck(int n, int i) { //Taken straight from my old watch, litterally forgot how it works
   int result = 0;
   i = pow(2, i);
 
@@ -607,7 +606,7 @@ void timeStuff() {
   minutes = (millis()/60000)%60 + minuteMod;
   hour = ((millis()/3600000) + hourMod) % 12;
   
-                                   //REEEEEEEEEEEEEEEEEEEEEEEEE Idiodic Stuffz
+                                   //REEEEEEEEEEEEEEEEEEEEEEEEE Annoying Stuffz
      
       while (minutes >= 60) {
         //yield();
@@ -983,7 +982,7 @@ int getColor(int i, int c) { //i = color index, c = rgb value (c=0-->red, c=1-->
   return storedColors[3*i+c];
 }
 
-// Just a fair warning, I wrote this method while watching Rick and Morty Season 4 Episode 1
+// Just a fair warning, I wrote this method while watching Rick and Morty
 void onTheSpectrum(boolean pestControl) { //freq1 = treble, freq1b = base
 
   int abrahamanito = freq1/78; //Yes yes yyiieeeesss
@@ -1017,7 +1016,7 @@ void onTheSpectrum(boolean pestControl) { //freq1 = treble, freq1b = base
       g += random(-21, 21); //Does that mean 21 is just "life" and "univ"? or is it "li-univ-every"? or what about "fe-erse-thing"? Aha! Fierce Thing!
       b += random(-21, 21); //Wait what?, 21 - -21 = 42? Conspiracy?
     }
-    r = max(0, min(255, r)); // According to Mr. Shelby: "The 'min' method is very good at setting max values, and vice versa"
+    r = max(0, min(255, r));
     g = max(0, min(255, g));
     b = max(0, min(255, b));
     SetPixelColor(i, r, g, b);
@@ -1052,7 +1051,7 @@ void onTheSpectrum(boolean pestControl) { //freq1 = treble, freq1b = base
       b += random(-21, 21); //Wait what?, 21 - -21 = 42? Conspiracy?
     }
 
-    r = max(0, min(255, r)); // According to Mr. Shelby: "The 'min' method is very good at setting max values, and vice versa"
+    r = max(0, min(255, r));
     g = max(0, min(255, g));
     b = max(0, min(255, b));
 
